@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Pro01 {
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		String inputNum=null;
+		System.out.println("Please enter an integer number:");
+		//Read input number
+		inputNum=input.nextLine();
+        System.out.println("The number entered is:"+inputNum);
+        try {
+        	int number=Integer.parseInt(inputNum);  
+        	
+        	int numLength=inputNum.length();
+        	
+        	if(number<0) {
+        		number=-number;
+        	}
+        	
+        	int[] array=new int[numLength]; 
+        	int newNum=0;
+        	for(int i=0;i<numLength;i++) {
+        		array[i]=(int) (number/Math.pow(10,i)%10);        		
+        	}
+        	for(int i=0;i<numLength;i++) {
+        		newNum+=(int) (array[i]*Math.pow(10,numLength-i-1));
+        	}
+        		
+        	System.out.println(number);	
+        	
+        }catch(NumberFormatException e){     
+        	//输入不是Int类型数字，输出错误
+        	System.out.println("The input is not an integer number.");
+        }
+        
+    }
+}

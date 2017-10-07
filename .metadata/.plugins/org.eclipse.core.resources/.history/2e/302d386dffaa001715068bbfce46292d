@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Pro01 {
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		String inputNum=null;
+		System.out.println("Please enter an integer number:");
+		//Read input number
+		inputNum=input.nextLine();
+        System.out.println("The number entered is:"+inputNum);
+        try {
+        	int number=Integer.parseInt(inputNum);   
+        	
+        }catch(NumberFormatException e){     
+        	//输入不是Int类型数字，输出错误
+        	System.out.println("The input is not an integer number.");
+        }
+        
+    }
+}
